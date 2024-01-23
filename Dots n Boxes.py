@@ -174,56 +174,31 @@ red_label.place(relx=0.2, rely=0.6)
 red_sc = tk.Label(scoreboard, text=str(p2_score), font="Forte 20", fg="red")
 red_sc.place(relx=0.6, rely=0.6)
 
-footer = tk.Label(root, text="Made by: Pranay Sinha     Version 0.2      ", font="Times 7", anchor="e", relief="ridge")
+footer = tk.Label(root, text="Made by: Pranay Sinha     Version 0.3      ", font="Times 7", anchor="e", relief="ridge")
 footer.place(relx=0, rely=0.97, relwidth=1, relheight=0.03)
 
 edge = [HoverButton(frame, text="", activebackground="black", background="white", relief="ridge",
                       command=lambda i=i: btnClick(i)) for i in range(40)]
 
-edge[0].place(x=30, y=22, height=7, width=42)
-edge[1].place(x=81, y=22, height=7, width=42)
-edge[2].place(x=132, y=22, height=7, width=42)
-edge[3].place(x=183, y=22, height=7, width=42)
-edge[4].place(x=22, y=30, height=42, width=7)
-edge[5].place(x=73, y=30, height=42, width=7)
-edge[6].place(x=124, y=30, height=42, width=7)
-edge[7].place(x=175, y=30, height=42, width=7)
-edge[8].place(x=226, y=30, height=42, width=7)
-edge[9].place(x=30, y=73, height=7, width=42)
-edge[10].place(x=81, y=73, height=7, width=42)
-edge[11].place(x=132, y=73, height=7, width=42)
-edge[12].place(x=183, y=73, height=7, width=42)
-edge[13].place(x=22, y=81, height=42, width=7)
-edge[14].place(x=73, y=81, height=42, width=7)
-edge[15].place(x=124, y=81, height=42, width=7)
-edge[16].place(x=175, y=81, height=42, width=7)
-edge[17].place(x=226, y=81, height=42, width=7)
-edge[18].place(x=30, y=124, height=7, width=42)
-edge[19].place(x=81, y=124, height=7, width=42)
-edge[20].place(x=132, y=124, height=7, width=42)
-edge[21].place(x=183, y=124, height=7, width=42)
-edge[22].place(x=22, y=132, height=42, width=7)
-edge[23].place(x=73, y=132, height=42, width=7)
-edge[24].place(x=124, y=132, height=42, width=7)
-edge[25].place(x=175, y=132, height=42, width=7)
-edge[26].place(x=226, y=132, height=42, width=7)
-edge[27].place(x=30, y=175, height=7, width=42)
-edge[28].place(x=81, y=175, height=7, width=42)
-edge[29].place(x=132, y=175, height=7, width=42)
-edge[30].place(x=183, y=175, height=7, width=42)
-edge[31].place(x=22, y=183, height=42, width=7)
-edge[32].place(x=73, y=183, height=42, width=7)
-edge[33].place(x=124, y=183, height=42, width=7)
-edge[34].place(x=175, y=183, height=42, width=7)
-edge[35].place(x=226, y=183, height=42, width=7)
-edge[36].place(x=30, y=226, height=7, width=42)
-edge[37].place(x=81, y=226, height=7, width=42)
-edge[38].place(x=132, y=226, height=7, width=42)
-edge[39].place(x=183, y=226, height=7, width=42)
+coordinates = [
+    (30, 22, 7, 42), (81, 22, 7, 42), (132, 22, 7, 42), (183, 22, 7, 42), (22, 30, 42, 7),
+    (73, 30, 42, 7), (124, 30, 42, 7), (175, 30, 42, 7), (226, 30, 42, 7), (30, 73, 7, 42),
+    (81, 73, 7, 42), (132, 73, 7, 42), (183, 73, 7, 42), (22, 81, 42, 7), (73, 81, 42, 7),
+    (124, 81, 42, 7), (175, 81, 42, 7), (226, 81, 42, 7), (30, 124, 7, 42), (81, 124, 7, 42),
+    (132, 124, 7, 42), (183, 124, 7, 42), (22, 132, 42, 7), (73, 132, 42, 7), (124, 132, 42, 7),
+    (175, 132, 42, 7), (226, 132, 42, 7), (30, 175, 7, 42), (81, 175, 7, 42), (132, 175, 7, 42),
+    (183, 175, 7, 42), (22, 183, 42, 7), (73, 183, 42, 7), (124, 183, 42, 7), (175, 183, 42, 7),
+    (226, 183, 42, 7), (30, 226, 7, 42), (81, 226, 7, 42), (132, 226, 7, 42), (183, 226, 7, 42)
+]
+
+for i, coord in enumerate(coordinates):
+    edge[i].place(x=coord[0], y=coord[1], height=coord[2], width=coord[3])
+
 
 box = dict()
 coords = (30.5, 81.5, 132.5, 183.5)
 k = 0
+
 for i in coords:
     for j in coords:
         b = tk.Label(frame, text="")
@@ -231,4 +206,5 @@ for i in coords:
         box[str(k)] = b
         k += 1
     k += 5
+
 root.mainloop()
